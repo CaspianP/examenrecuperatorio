@@ -57,3 +57,79 @@ input:focus {
 #btn-agregar:hover {
   background: #265a4c;
 }
+
+/* Página y tarjeta */
+body {
+  background: #f4f5f2;
+  padding: 32px 16px;
+}
+
+.tarjeta {
+  max-width: 550px;
+  margin: 0 auto;
+  padding: 40px;
+  background: #fff;
+  border: 1px solid #e1e3e0;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* Lista de contactos */
+#lista {
+  list-style: none;
+  margin: 20px 0 0;
+  padding: 0;
+}
+
+.contacto {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 0;
+  border-bottom: 1px solid #e1e3e0;
+}
+
+.contacto-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.contacto-nombre {
+  font-weight: bold;
+}
+
+.contacto-telefono {
+  color: #6b6f6c;
+  font-size: 14px;
+}
+
+.btn-eliminar {
+  padding: 8px 14px;
+  font-size: 14px;
+  color: #b3372f;
+  background: #fff;
+  border: 1px solid #e6b9b5;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn-eliminar:hover {
+  background: #fbeeed;
+}
+
+/* Mensaje vacío y contador */
+.vacio {
+  margin: 32px 0;
+  text-align: center;
+  color: #6b6f6c;
+}
+
+.contador {
+  margin: 24px 0 0;
+  padding-top: 20px;
+  border-top: 1px solid #e1e3e0;
+  font-weight: bold;
+  color: #6b6f6c;
+}
