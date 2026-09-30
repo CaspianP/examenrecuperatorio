@@ -7,6 +7,7 @@ const inputTelefono = document.getElementById("telefono");
 const btnAgregar = document.getElementById("btn-agregar");
 const lista = document.getElementById("lista");
 const mensajeVacio = document.getElementById("vacio");
+const spanContador = document.getElementById("contador");
 
 // Dibuja la lista completa a partir del arreglo
 function mostrarContactos() {
@@ -44,6 +45,9 @@ function mostrarContactos() {
 
   // Mostrar el mensaje solo si no hay contactos
   mensajeVacio.style.display = contactos.length === 0 ? "block" : "none";
+
+  // Contador: siempre refleja el total real del arreglo
+  spanContador.textContent = contactos.length;
 }
 
 // Agrega un contacto nuevo
