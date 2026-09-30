@@ -27,9 +27,18 @@ function mostrarContactos() {
     telefono.className = "contacto-telefono";
     telefono.textContent = contacto.telefono;
 
+    // Botón eliminar (uno por cada contacto)
+    const btnEliminar = document.createElement("button");
+    btnEliminar.className = "btn-eliminar";
+    btnEliminar.textContent = "Eliminar";
+    btnEliminar.addEventListener("click", function () {
+      eliminarContacto(contacto.id);
+    });
+
     info.appendChild(nombre);
     info.appendChild(telefono);
     li.appendChild(info);
+    li.appendChild(btnEliminar);
     lista.appendChild(li);
   });
 
@@ -59,9 +68,18 @@ function agregarContacto() {
   mostrarContactos();
 }
 
-// Event listener  ← hasta aquí tenías
-btnAgregar.addEventListener("click", agregarContacto);          // ← FALTABA
-inputTelefono.addEventListener("keydown", (e) => {               // ← FALTABA
+// Elimina el contacto que tenga ese id
+function eliminarContacto(id) {
+  contactos = contactos.filter(function (contacto) {
+    return contacto.id !== id;
+  });
+
+  mostrarContactos();
+}
+
+// Event listener
+btnAgregar.addEventListener("click", agregarContacto);
+inputTelefono.addEventListener("keydown", (e) => {
   if (e.key === "Enter") agregarContacto();
 });
-mostrarContactos();     
+mostrarContactos();
