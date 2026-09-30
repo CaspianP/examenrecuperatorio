@@ -42,7 +42,6 @@ function agregarContacto() {
   const nombre = inputNombre.value.trim();
   const telefono = inputTelefono.value.trim();
 
-  // No permitir contactos vacíos
   if (nombre === "" || telefono === "") {
     return;
   }
@@ -60,4 +59,9 @@ function agregarContacto() {
   mostrarContactos();
 }
 
-// Event listener
+// Event listener  ← hasta aquí tenías
+btnAgregar.addEventListener("click", agregarContacto);          // ← FALTABA
+inputTelefono.addEventListener("keydown", (e) => {               // ← FALTABA
+  if (e.key === "Enter") agregarContacto();
+});
+mostrarContactos();     
